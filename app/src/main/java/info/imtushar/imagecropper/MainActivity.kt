@@ -28,15 +28,6 @@ class MainActivity : AppCompatActivity() {
     val CROP_IMAGE_ACTIVITY_REQUEST_CODE = 203
     private lateinit var mImageView: AppCompatImageView
 
-
-    companion object {
-        var weakActivity: WeakReference<MainActivity>? = null
-
-        fun getInstanceActivity(): MainActivity? {
-            return weakActivity?.get()
-        }
-    }
-
     var PERMISSIONS = arrayOf(
         Manifest.permission.CAMERA,
         Manifest.permission.WRITE_EXTERNAL_STORAGE,
@@ -148,16 +139,6 @@ class MainActivity : AppCompatActivity() {
             // Handle the Intent
         }
     }
-/*
-    private val getContentResult = registerForActivityResult(ActivityResultContracts.StartActivityForResult()){result->
-        Log.d("CroppedImage", "Image: ${result.data?.extras}")
-
-        if (result.data?.data != null){
-            Log.d("CroppedImage", "Image: ${result.data?.data!!}")
-        }
-
-    }*/
-
 
 
     fun showToast(ctx: Context?, msg: String?) {
